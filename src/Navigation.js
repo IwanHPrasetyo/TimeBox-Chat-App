@@ -5,6 +5,7 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 import IoniconsIcon from 'react-native-vector-icons/Ionicons'
 import FeatherIcon from 'react-native-vector-icons/Feather'
 import AntDesign from 'react-native-vector-icons/AntDesign'
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import React from 'react'
 
 import Home from './Screen/Home'
@@ -13,6 +14,8 @@ import Setting from './Screen/Setting'
 import ChatRoom from './Screen/Chat'
 import Login from './Screen/Login'
 import Register from './Screen/Register'
+import Maps from './Screen/Maps'
+import Profile from './Screen/Profile'
 
 const TabNavigation = createMaterialBottomTabNavigator(
 {
@@ -27,6 +30,7 @@ const TabNavigation = createMaterialBottomTabNavigator(
 				),
 			}
 		},
+		
 	Contact: {
 			screen: Contact,
 			navigationOptions: {
@@ -39,7 +43,19 @@ const TabNavigation = createMaterialBottomTabNavigator(
 			}
 		},
 
-	Chat: {
+		Maps: {
+			screen: Maps,
+			navigationOptions: {
+				tabBarLabel: 'Maps',
+				tabBarIcon: ({ tintColor }) => (
+					<View>
+						<FontAwesome5 style={[{ color: tintColor }]} size={25} name={'map-marked-alt'} />
+					</View>
+				),
+			}
+		},
+
+		Setting: {
 			screen: Setting,
 			navigationOptions: {
 				tabBarLabel: 'Setting',
@@ -72,6 +88,10 @@ const Navigation = createStackNavigator({
 	},
 	Register: {
 		screen: Register
+	}
+	,
+	Profile: {
+		screen: Profile
 	}
 },{
 	headerMode :'none',

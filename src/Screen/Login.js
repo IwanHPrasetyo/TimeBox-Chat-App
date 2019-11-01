@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {StyleSheet, View, TextInput} from 'react-native'
 import firebase from 'firebase'
 import {Thumbnail, H2, Container, Button, Text, Header, Content, Form, Item, Input, Label } from 'native-base';
+import IoniconsIcon from 'react-native-vector-icons/Ionicons'
 
 if (!firebase.apps.length) {
 
@@ -68,7 +69,7 @@ onLoginPress(){
             </Item>
             <Item floatingLabel>
               <Label>Password</Label>
-              <Input onChangeText={password => this.setState({password})} />
+              <Input secureTextEntry = {true} onChangeText={password => this.setState({password})} />
             </Item>
               <Button style={style.ButtonLogin} full info onPress={this.onLoginPress.bind(this)} >
             	<Text>Login</Text>

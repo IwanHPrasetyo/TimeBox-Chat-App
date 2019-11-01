@@ -65,7 +65,7 @@ class Contact extends Component {
 
 
 	render() {   
-
+    console.log(this.state.contact)
 		return (
 		<Container>
         <Header style={style.Header}>
@@ -90,16 +90,15 @@ class Contact extends Component {
             <List>
             <ListItem thumbnail>
               <Left>
-                <Thumbnail square source={{ uri: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flh6.googleusercontent.com%2F-ynV9ZmzeSnk%2FTX-DYUnBMCI%2FAAAAAAAAAFk%2FDcQq5CuMTYs%2Fs1600%2Fotaku.JPG&f=1&nofb=1' }} />
+                <Thumbnail square source={{ uri: `https://ui-avatars.com/api/?size=256&name=`+data.username+'`' }} />
               </Left>
               <Body>
-                <Text>{data.username}</Text>
+                <Text onPress={()=> this.props.navigation.navigate('Profile',{username: data.username, email : data.email, phone : data.phone })} >{data.username}</Text>
                 <Text note numberOfLines={1}>{data.email}</Text>
               </Body>
               <Right>
-                <Button transparent>
-                  <Icon type='Feather' style={style.IconDelete} name='delete' />
-                </Button>
+                  <Icon onPress={()=> this.props.navigation.navigate('Maps')} type='Feather' style={style.Icon} name='map-pin' />
+                  <Icon type='Feather' style={style.Icon} name='message-circle' />
               </Right>
             </ListItem>
           </List>            
@@ -136,9 +135,6 @@ const style = StyleSheet.create({
   },
   Icon :{
     color: '#686de0'
-  },
-  IconDelete: {
-  	color: '#B53471'
   }
 
 })

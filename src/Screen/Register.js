@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {StyleSheet, TextInput, View } from 'react-native'
 import firebase from 'firebase';
 import {Thumbnail, Container, Button, Text, Header, Content, Form, Item, Input, Label } from 'native-base';
+import Geolocation from '@react-native-community/geolocation';
 
 if (!firebase.apps.length) {
 
@@ -27,8 +28,44 @@ class Register extends Component {
       phone:'', 
       password:'',
       error:'',
-      loading: true
+      loading: true,
+      latitude: 0,
+      longitude: 0,
+      region: 0,
+      initialPosition: 'unknown',
+      lastPosition: 'unknown',
     }
+  }
+
+  watchID: ?number = null;
+
+  componentDidMount() {
+    this.getLocation()
+  }
+
+  async getLocation() {
+    await Geolocation.getCurrentPosition(
+      position => {
+        const initialPosition = JSON.stringify(position);
+        this.setState({ initialPosition });
+        console.log(position)
+      },
+      error => { },
+      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
+    );
+    this.watchID = Geolocation.watchPosition(position => {
+      const lastPosition = JSON.stringify(position);
+     
+      this.setState({
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+        lastPosition
+      });
+    });
+  }
+
+  componentWillUnmount() {
+    this.watchID != null && Geolocation.clearWatch(this.watchID);
   }
 
   onSignUpPress(){
@@ -48,7 +85,10 @@ class Register extends Component {
                 username : this.state.username,
                 email : this.state.email,
                 phone : this.state.phone,
-                password : this.state.password             
+                password : this.state.password,
+                latitude: this.state.latitude,
+                longitude: this.state.longitude,                    
+            
             }).then((data)=>{
                 console.log('data' , data);
             }).catch((error)=>{
@@ -91,7 +131,7 @@ class Register extends Component {
             </Item>
             <Item floatingLabel>
               <Label>Password</Label>
-              <Input onChangeText={password => this.setState({password: password})}/>
+              <Input secureTextEntry = {true} onChangeText={password => this.setState({password: password})}/>
             </Item>
               <Button style={style.ButtonLogin} full info onPress={this.onSignUpPress.bind(this)} >
             	<Text>Register</Text>

@@ -31,7 +31,7 @@ export default class Chat extends Component {
     email: ''
     }
 
-    componentDidMount() {
+    componentWillMount() {
     
     this.setState({
 

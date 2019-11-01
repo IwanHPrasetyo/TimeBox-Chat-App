@@ -40,6 +40,7 @@ constructor(props){
       password:'',
       error:'',
       userProfile:[],
+      avatar :'',
       loading: true
     }
   }
@@ -77,7 +78,7 @@ componentDidMount() {
 
      })}
 
-    })    
+    })
     
 }
 
@@ -95,7 +96,7 @@ componentDidMount() {
             <Title style={style.Title}>Chat message</Title>
           </Body>
           <Right>
-            <Button transparent onPress={()=> this.props.navigation.navigate('ChatRoom')}>
+            <Button transparent onPress={()=> this.props.navigation.navigate('Contact')}>
               <Icon style={style.Icon} name='new-message' type='Entypo' />
             </Button>
           </Right>
@@ -105,7 +106,7 @@ componentDidMount() {
           <List>
             <ListItem thumbnail>
               <Left>
-                <Thumbnail style={style.Thumbnail} square source={{ uri: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flh6.googleusercontent.com%2F-ynV9ZmzeSnk%2FTX-DYUnBMCI%2FAAAAAAAAAFk%2FDcQq5CuMTYs%2Fs1600%2Fotaku.JPG&f=1&nofb=1' }} />
+                <Thumbnail style={style.Thumbnail} square source={{ uri: `https://ui-avatars.com/api/?size=256&name=`+this.state.userProfile.username+'`'}} />
               </Left>
               <Body>
                 <Text>{this.state.userProfile.username}</Text>
@@ -125,11 +126,11 @@ componentDidMount() {
             <List>
             <ListItem thumbnail onPress={()=> this.props.navigation.navigate('ChatRoom',{username: data.username, usersend: this.state.userProfile.username })}>
               <Left>
-                <Thumbnail style={style.Thumbnail} square source={{ uri: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flh6.googleusercontent.com%2F-ynV9ZmzeSnk%2FTX-DYUnBMCI%2FAAAAAAAAAFk%2FDcQq5CuMTYs%2Fs1600%2Fotaku.JPG&f=1&nofb=1' }} />
+                <Thumbnail style={style.Thumbnail} square source={{ uri: `https://ui-avatars.com/api/?size=256&name=`+data.username+'`'}} />
               </Left>
               <Body>
                 <Text>{data.username}</Text>
-                <Text note numberOfLines={1}>Ayoo</Text>
+                <Text note numberOfLines={1}>Messages</Text>
               </Body>
               <Right>
                   <Text note numberOfLines={1}>09:30</Text>
