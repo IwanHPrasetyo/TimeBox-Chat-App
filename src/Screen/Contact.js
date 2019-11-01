@@ -78,7 +78,7 @@ class Contact extends Component {
                 <Text style={style.Text}>Contact</Text>
             </Body>
             <Right>
-                <Button transparent onPress={()=> this.props.navigation.goBack(null)}>
+                <Button transparent>
                   <Icon type='Feather' style={style.Icon} name='user-plus' />
                 </Button>
             </Right>
@@ -97,8 +97,11 @@ class Contact extends Component {
                 <Text note numberOfLines={1}>{data.email}</Text>
               </Body>
               <Right>
-                  <Icon onPress={()=> this.props.navigation.navigate('Maps')} type='Feather' style={style.Icon} name='map-pin' />
+                  
+                  <Icon onPress={()=> this.props.navigation.navigate('MapFriends', {username: data.username, email : data.email, phone : data.phone, latitude : data.latitude, longitude: data.longitude })} type='Feather' style={style.Icon} name='map-pin' />
+                  
                   <Icon type='Feather' style={style.Icon} name='message-circle' />
+                  
               </Right>
             </ListItem>
           </List>            

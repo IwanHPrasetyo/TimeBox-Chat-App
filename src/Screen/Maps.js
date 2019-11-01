@@ -70,27 +70,10 @@ export default class Maps extends Component {
             description={"You here"}
           />
         </MapView >
+
       </View>
 
 		)
 	}
 }
 
-const style = StyleSheet.create({
-	Header:{
-		backgroundColor:'#ffff',
-		elevation: 2
-	},
-	Content:{
-		flex : 1,
-		backgroundColor :'#fff',
-		padding : 5
-	},
-  Icon :{
-    color: '#686de0'
-  },
-  Text :{
-    color: '#686de0'
-  }
-
-})

@@ -16,6 +16,7 @@ import Login from './Screen/Login'
 import Register from './Screen/Register'
 import Maps from './Screen/Maps'
 import Profile from './Screen/Profile'
+import MapFriends from './Screen/MapFriends'
 
 const TabNavigation = createMaterialBottomTabNavigator(
 {
@@ -92,6 +93,9 @@ const Navigation = createStackNavigator({
 	,
 	Profile: {
 		screen: Profile
+	},
+	MapFriends: {
+		screen: MapFriends
 	}
 },{
 	headerMode :'none',

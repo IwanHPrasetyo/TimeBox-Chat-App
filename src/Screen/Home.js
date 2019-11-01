@@ -109,7 +109,7 @@ componentDidMount() {
                 <Thumbnail style={style.Thumbnail} square source={{ uri: `https://ui-avatars.com/api/?size=256&name=`+this.state.userProfile.username+'`'}} />
               </Left>
               <Body>
-                <Text>{this.state.userProfile.username}</Text>
+                <Text onPress={()=> this.props.navigation.navigate('Profile',{username: this.state.userProfile.username, email : this.state.userProfile.email, phone : this.state.userProfile.phone })} >{this.state.userProfile.username}</Text>
                 <Text note numberOfLines={1}>{this.state.userProfile.email}</Text>
               </Body>
             </ListItem>
