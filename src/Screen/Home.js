@@ -15,14 +15,14 @@ import firebase from 'firebase'
 if (!firebase.apps.length) {
 
 firebase.initializeApp({
-    apiKey: "AIzaSyDmF6Cpqi4EWl7XmdDR7HzzPgp0Pu3vw1o",
-    authDomain: "boxtime-cf046.firebaseapp.com",
-    databaseURL: "https://boxtime-cf046.firebaseio.com",
-    projectId: "boxtime-cf046",
-    storageBucket: "boxtime-cf046.appspot.com",
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
     messagingSenderId: "989356703954",
-    appId: "1:989356703954:web:14f53a735551ccac462d0b",
-    measurementId: "G-CYB8L17ZBM"
+    appId: "",
+    measurementId: ""
 });
 
 }
