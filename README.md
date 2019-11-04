@@ -1,6 +1,6 @@
 # TimeBox-Chat-App
 
-![image](https://user-images.githubusercontent.com/55027286/68103754-b00e6500-ff0a-11e9-9fe8-f7ecc11ca408.png)
+![image](https://user-images.githubusercontent.com/55027286/68103754-b00e6500-ff0a-11e9-9fe8-f7ecc11ca408.png =100x20)
 
 ![image](https://user-images.githubusercontent.com/55027286/68103818-e77d1180-ff0a-11e9-88d5-9a7d42af782a.png)
 
