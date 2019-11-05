@@ -17,3 +17,7 @@
 ![image](https://user-images.githubusercontent.com/55027286/68104198-c6b5bb80-ff0c-11e9-9093-33588d6b1372.png)
 
 ![image](https://user-images.githubusercontent.com/55027286/68104247-eea51f00-ff0c-11e9-9124-e9baf8466c9e.png)
+
+![Screenshot from 2019-11-05 16 54 45](https://user-images.githubusercontent.com/55027286/68198084-f4266600-ffed-11e9-9146-a819e989aa67.png)
+![Screenshot from 2019-11-05 16 55 30](https://user-images.githubusercontent.com/55027286/68198085-f4befc80-ffed-11e9-8b97-054a61c1a458.png)
+
